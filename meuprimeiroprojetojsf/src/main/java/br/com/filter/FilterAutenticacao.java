@@ -29,6 +29,9 @@ public class FilterAutenticacao implements Filter, Serializable {
 	@Inject
 	private JPAUtil jpaUtil;
 	
+	
+	
+	
 
 	@Override
 	public void destroy() {
@@ -59,7 +62,7 @@ public class FilterAutenticacao implements Filter, Serializable {
 
 	@Override
 	public void init(FilterConfig arg0) throws ServletException {
-		
+		jpaUtil.getEntityManager();
 	}
 
 }
