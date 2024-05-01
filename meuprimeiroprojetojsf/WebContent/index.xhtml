@@ -1,19 +1,49 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html" 
-	 xmlns:b="http://bootsfaces.net/ui">
+  xmlns:h="http://java.sun.com/jsf/html" 
+  xmlns:b="http://bootsfaces.net/ui">
 
 <h:head>
-	<title>Login</title>
-	  <link href="resources/estilo.css" rel="stylesheet"></link>
+  <title>Login</title>
+  <h:outputStylesheet library="primefaces" name="all.css" />  <style type="text/css">
+        /* Basic responsive layout */
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            min-height: 100vh;  /* Ensures content fills viewport height */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Center and style the login form */
+        #formLogin {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 300px; /* Adjust width as needed */
+        }
+
+        /* Center and style the image */
+        h:graphicImage {
+            display: block;
+            margin: 0 auto 15px auto; /* Center horizontally and add bottom margin */
+        }
+    </style>
+  
 </h:head>
 
 <h:body>
 
     <b:messages autoUpdate="true" id="msg"  />
     
-	<b:form id="formLogin" style="margin-top:10%; margin-left:40%;    margin-right: 40%;">
+	<b:form id="formLogin">
 	
 	  <h:graphicImage value="/resources/img/editar.png"   />
 	    
@@ -23,20 +53,20 @@
 	    <b:panel>
 	   
 	     
-	     <b:column>
+	     <b:column class="b-panelGrid-column">
 		     <h:outputLabel value="Login:"/>
 		     <b:inputText id="login" value="#{pessoaBean.pessoa.login}" required="true" requiredMessage="Informe o login"/>
 		     <b:message for="login"  auto-update="true"/>
 	     </b:column>
 	     
-	     <b:column>
+	     <b:column class="b-panelGrid-column">
 		     <h:outputLabel value="Senha:"/>
 		     <b:inputSecret id="senha" value="#{pessoaBean.pessoa.senha}" required="true" requiredMessage="Informe a senha"/>
 		     <b:message for="senha" />
 	     </b:column>
 	     
-	     <b:column>
-		 	<b:commandButton value="Acessar" action="#{pessoaBean.logar}" style="width: 100%;" />	     
+	     <b:column class="b-panelGrid-column">
+		 	<b:commandButton value="Acessar" action="#{pessoaBean.logar}"  />	     
 	     </b:column>
 	      
 	     </b:panel>
@@ -50,4 +80,3 @@
 </h:body>
 
 </html>
-

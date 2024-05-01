@@ -81,51 +81,41 @@
 			<br/>
 			
 			<b:form>
-			<b:dataTable value="#{lancementoBean.lancamentos}" var="lanc" border="3" cellpadding="6">
-				<f:facet name="header">Lista de lançamentos</f:facet>
-				
-				<h:column>
-					<f:facet name="header">ID</f:facet>
-					<h:outputLabel value="#{lanc.id}"/>
-				</h:column>
-				
-				<h:column>
-					<f:facet name="header">Tópico</f:facet>
-					<h:outputLabel value="#{lanc.topico}"/>
-				</h:column>
-				
-				<h:column>
-					<f:facet name="header">Descrição</f:facet>
-					<h:outputLabel value="#{lanc.descricao}"/>
-				</h:column>
-				
-				
-				<h:column>
-					<f:facet name="header">Código Java</f:facet>
-					<h:outputLabel value="#{lanc.codigojava}"/>
-				</h:column>
-				
-				
-				
-				<h:column>
+			<b:dataTable value="#{lancementoBean.lancamentos}" var="lanc" border="3" cellpadding="6" pdf="true" excel="true">
+			
+			  <b:dataTableColumn value="#{lanc.id}" label="ID"/>
+			  
+			  <b:dataTableColumn value="#{lanc.topico}" label="Tópico"/>
+			  
+			  <b:dataTableColumn value="#{lanc.descricao}" label="Descrição"/>
+			  
+			   <b:dataTableColumn value="#{lanc.codigojava}" label="Código"/>
+			   
+			   
+			   <b:dataTableColumn>
 					<f:facet name="header">Editar</f:facet>
 					<h:commandLink title="Editar">
 						<h:graphicImage value="/resources/img/editar.png" />
 						<f:setPropertyActionListener target="#{lancementoBean.lancamento}"
 						 value="#{lanc}" />
 					</h:commandLink>
-				</h:column>
-				
-				
-				<h:column  rendered="#{pessoaBean.permiteAcesso('ADMINISTRADOR')}">
+				</b:dataTableColumn>
+			   
+			   
+			  <b:dataTableColumn rendered="#{pessoaBean.permiteAcesso('ADMINISTRADOR')}">
 		     		<f:facet name="header">Excluir</f:facet>
 		     		<h:commandLink action="#{lancementoBean.remover}" title="Excluir" immediate="true"> 
 		     			<f:setPropertyActionListener target="#{lancementoBean.lancamento}" 
 		     			 value="#{lanc}" />
 		     			<h:graphicImage value="/resources/img/excluir.png"/>
 		     		</h:commandLink>
-	         	</h:column>
-				
+	         	</b:dataTableColumn>
+			   
+			   
+		
+
+			  
+			 
 			</b:dataTable>
 	</b:form>
 	
