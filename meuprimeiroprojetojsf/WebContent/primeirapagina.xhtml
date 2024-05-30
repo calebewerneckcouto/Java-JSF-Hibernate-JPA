@@ -6,24 +6,67 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
+	
 	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"> <h:head>
-	<title>Cadastro de usuário</title>
-	<link href="resources/estilo.css" rel="stylesheet"></link>
-</h:head> <h:body>
+	
+	<link rel="stylesheet" href="/resources/estilo.css"></link>
+	
+</h:head>
+
+
+<style type="text/css">
+    /* For screens smaller than 720px */
+@media (max-width: 720px) {
+  #formPessoa h:panelGrid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust as needed */
+  }
+
+  #formPessoa b:column {
+    margin-bottom: 1rem; /* Add some space between elements */
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .fixed-width-menu {
+    width: 100%;
+  }
+  
+#form {
+  padding:30px;
+}
+
+}
+
+/* For screens smaller than 500px */
+@media (max-width: 580px) {
+  #formPessoa b:inputText,
+  #formPessoa b:selectOneMenu,
+  #formPessoa b:selectManyCheckbox,
+  #formPessoa b:dataTable {
+    width: 100%; /* Make input elements responsive */
+  }
+}
+  </style>
+ 
+
+
+
+ <h:body>
 
 	<ui:include src="/menu.xhtml" />
 
+ 
 
-
-	<h:form id="formPessoa" enctype="multipart/form-data"
+	<b:form id="formPessoa" enctype="multipart/form-data"
 		rendered="#{pessoaBean.permiteAcesso('ADMINISTRADOR')}">
 
 		<b:messages />
 
-		<h:panelGrid columns="2">
-			<f:facet name="header">
-				<h:outputText value="Cadastro De usuário" />
-			</f:facet>
+		<h:panelGrid columns="1">
+			
+
 
 			<b:panel>
 
@@ -56,9 +99,9 @@
 						valueChangeListener="#{pessoaBean.mudancaDeValorSobrenome}" />
 				</b:column>
 
-			</b:panel>
+			
 
-			<b:panel>
+			
 				<b:column>
 					<h:outputLabel value="Idade:" />
 					<b:inputText value="#{pessoaBean.pessoa.idade}" mask="numeric" />
@@ -304,9 +347,9 @@
 		<br />
 		<br />
 
-	</h:form>
+	</b:form>
 
-	<h:form id="formTable">
+	<b:form id="formTable">
 		<b:dataTable value="#{pessoaBean.pessoas}" var="pessoa" border="3"
 			cellpadding="6">
 
@@ -361,7 +404,7 @@
 
 		</b:dataTable>
 
-	</h:form>
+	</b:form>
 
 </h:body> </html>
 
