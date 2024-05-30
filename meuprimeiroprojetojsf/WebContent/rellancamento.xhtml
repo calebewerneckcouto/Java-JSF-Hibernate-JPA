@@ -41,6 +41,18 @@
 		    </b:panelGrid>
 				
 		   <b:commandButton value="Buscar" action="#{relLancamento.bucarLancamento}" look="primary" style="margin-left: 15px;"/>
+		   
+		   <br></br>
+		   
+		   <div style="padding:50px;">
+		   
+		  <b:column>
+				<h:outputLabel value="Código"/>
+				<b:inputTextarea  style="height: 300px;"     value="#{lancementoBean.lancamento.codigojava}"  />
+				</b:column>
+		   
+		   </div>
+
 			
 	</b:form>
 			
@@ -55,10 +67,17 @@
 			  <b:dataTableColumn value="#{lanc.id}" label="ID"/>
 			  
 			  <b:dataTableColumn value="#{lanc.topico}" label="Tópico"/>
-			  
 			  <b:dataTableColumn value="#{lanc.descricao}" label="Descrição"/>
 			  
-			  
+			 
+			  <b:dataTableColumn>
+					<f:facet name="header">CÓDIGO</f:facet>
+					<h:commandLink title="Editar">
+						<h:graphicImage value="/resources/img/editar.png" />
+						<f:setPropertyActionListener target="#{lancementoBean.lancamento}"
+						 value="#{lanc}" />
+					</h:commandLink>
+				</b:dataTableColumn>
 			  
 			 
 			</b:dataTable>
