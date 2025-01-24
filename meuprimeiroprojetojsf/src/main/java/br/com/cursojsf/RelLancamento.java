@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -23,7 +24,8 @@ public class RelLancamento implements Serializable {
 	private Date dataFim;
 
 	private String topico;
-
+	
+	
 	private List<Lancamento> lancamentos = new ArrayList<Lancamento>();
 
 	@Inject
@@ -31,6 +33,11 @@ public class RelLancamento implements Serializable {
 
 	@Inject
 	private DaoGeneric<Lancamento> daoGeneric;
+	
+	
+	
+
+	
 
 	public String getTopico() {
 		return topico;
@@ -79,6 +86,8 @@ public class RelLancamento implements Serializable {
 	public List<Lancamento> getLancamentos() {
 		return lancamentos;
 	}
+	
+
 
 	public void bucarLancamento() {
 		if (dataIni == null && dataFim == null && topico == null) {

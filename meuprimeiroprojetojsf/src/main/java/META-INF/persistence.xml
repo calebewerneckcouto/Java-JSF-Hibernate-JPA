@@ -16,11 +16,11 @@
 			 
 	
 			
-			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/cwcdcomb_meuprimeiroprojetojsf"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/meuprimeiroprojetojsf"/>
 			<!-- cwcdcomb_meuprimeiroprojetojsf  -->
-			<property name="javax.persistence.jdbc.user" value="cwcdcomb_cwc3d"/>
+			<property name="javax.persistence.jdbc.user" value="postgres"/>
 			<!-- userprojetojsf -->
-			<property name="javax.persistence.jdbc.password" value="cwc3d14694899" />
+			<property name="javax.persistence.jdbc.password" value="admin" />
 			
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />

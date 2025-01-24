@@ -72,6 +72,9 @@ public class LancementoBean implements Serializable {
 		return "";
 				
 	}
+	
+	
+	
 
 	public Lancamento getLancamento() {
 		return lancamento;
@@ -96,5 +99,15 @@ public class LancementoBean implements Serializable {
 	public void setLancamentos(List<Lancamento> lancamentos) {
 		this.lancamentos = lancamentos;
 	}
+
+	public IDaoLancamento getDaoLancamento() {
+		return daoLancamento;
+	}
+
+	public void setDaoLancamento(IDaoLancamento daoLancamento) {
+		this.daoLancamento = daoLancamento;
+	}
+	
+	
 
 }

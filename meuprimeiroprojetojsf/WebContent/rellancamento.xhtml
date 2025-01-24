@@ -68,10 +68,11 @@
 			  
 			  <b:dataTableColumn value="#{lanc.topico}" label="Tópico"/>
 			  <b:dataTableColumn value="#{lanc.descricao}" label="Descrição"/>
+			   <b:dataTableColumn value="#{lanc.codigojava}" label="Código"/>
 			  
 			 
-			  <b:dataTableColumn>
-					<f:facet name="header">CÓDIGO</f:facet>
+			  <b:dataTableColumn >
+					<f:facet name="header">Editar</f:facet>
 					<h:commandLink title="Editar">
 						<h:graphicImage value="/resources/img/editar.png" />
 						<f:setPropertyActionListener target="#{lancementoBean.lancamento}"
