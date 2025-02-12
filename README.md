@@ -20,6 +20,11 @@ Sistema completo de cadastro
 Autenticação com login/senha
 Upload e processamento de fotos de perfil
 Validação de CEP integrada com API externa
+
+
+
+
+
 📁 Estrutura do Projeto
 src/main/java/
 ├── br.com.converter/
@@ -45,7 +50,7 @@ Banco de dados relacional
 Maven para gerenciamento de dependências
 
 # Clone o repositório
-git clone https://seu-repositorio.git
+git clone [https://seu-repositorio.git](https://github.com/calebewerneckcouto/Java-JSF-Hibernate-JPA.git)
 
 # Compile o projeto
 mvn clean install
