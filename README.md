@@ -50,7 +50,7 @@ Banco de dados relacional
 Maven para gerenciamento de dependências
 
 # Clone o repositório
-git clone [https://seu-repositorio.git](https://github.com/calebewerneckcouto/Java-JSF-Hibernate-JPA.git)
+git clone (https://github.com/calebewerneckcouto/Java-JSF-Hibernate-JPA.git)]
 
 # Compile o projeto
 mvn clean install
